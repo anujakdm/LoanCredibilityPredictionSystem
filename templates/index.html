@@ -4,26 +4,284 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/style.css">
     <title>Loan Predict</title>
+    <style>
+      :root {
+  --primary-color: #2d2254;
+  --secondary--color: #f5c42f;
+  --text-color: #c5bbec;
+}
+html {
+  scroll-behavior: smooth;
+ }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nixie One", cursive;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-bottom: 0.625rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  background-color: var(--secondary--color);
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.primary-text {
+  color: var(--primary-color);
+}
+
+.secondary-text {
+  color: var(--secondary--color);
+}
+
+.section {
+  position: relative;
+  padding: 0 20px;
+}
+
+.section-top {
+  min-height: 200px;
+  padding-top: 20px;
+  background: url("https://i.ibb.co/PhVR2Vh/bg1.png") no-repeat center
+    center/cover;
+}
+
+.section-top .content {
+  text-align: center;
+}
+
+.section-top .content h1 {
+  font-size: 45px;
+}
+
+.section-top .content,
+.section-stream .play,
+.section-stream .content {
+  position: static;
+  width: 100%;
+}
+
+.section-stream {
+  min-height: 400px;
+  background: url("https://i.ibb.co/bsX6RV0/bg2.png") no-repeat center
+    center/cover;
+}
+
+.section-stream h2 {
+  font-size: 35px;
+}
+
+.section-stream .play {
+  width: 50%;
+  display: block;
+  margin: 30px auto;
+  opacity: 0.5;
+}
+
+.section-stream .content > div,
+.section-grid > div {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.section-grid {
+  display: block;
+  margin-top: 0;
+  text-align: center;
+}
+
+.section-grid p {
+  color: var(--text-color);
+}
+
+.section-grid .dot {
+  font-size: 40px;
+  padding-left: 2px;
+}
+
+
+.footer ul {
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .section-top {
+    min-height: 500px;
+    padding-top: 0;
+  }
+
+  .section-top .content {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 55%;
+  }
+
+  .section-top .content h1 {
+    font-size: 70px;
+    text-align: left;
+    line-height: 1.3;
+  }
+
+  .section-stream {
+    min-height: 700px;
+  }
+
+  .section-stream .play {
+    width: 27%;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    opacity: 1;
+  }
+
+  .section-stream .content {
+    position: absolute;
+    width: 50%;
+    top: 130px;
+    right: 70px;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  .form-horizontal{
+    position: static;
+    width: auto;
+    height: max-content;
+    text-align: center;
+    font-size: 70px;
+    width: 100%;
+    padding: 25px 30px;
+  border-radius: 5px;
+}
+.form-horizontal .form-group .form-control{
+  height: 45px;
+  width: 70%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 5px;
+}
+.output{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.footer {
+  border-top: var(--text-color) 1px solid;
+  padding: 30px;
+  margin-top: 20px;
+  font-size: x-small;
+}
+
+  
+}
+    </style>
   </head>
 
   <body>
+    <section class="section section-top">
+      <div class="content rellax" data-rellax-speed="5">
+        <h1>Loan Credibility Prediction</h1><br>
+        <h3>Don't just stop. Continue Exploring</h3>
+      </div>
+    </section>
+    <section class="section section-stream">
+      <img
+        class="play rellax"
+        src="https://image.flaticon.com/icons/svg/4069/4069204.svg"
+        alt="Play"
+        data-rellax-speed="0"
+        data-rellax-xs-speed="-5"
+      />
+      <div class="content rellax" data-rellax-speed="10">
+        <div>
+          <h2 class="secondary-text">Loan</h2>
+          <p>
+            A loan is a contract between a borrower and a lender in which the borrower receives an amount of money (principal) that they are obligated to pay back in the future.
+          </p>
+        </div>
+        <div>
+          <h2 class="secondary-text">Loan Credibility</h2>
+          <p>
+            Check your personal loan credibility before applying for a loan to avoid any hassle. Your loan credibility depends on various factors, including your age, monthly income, and type of employment, to name a few.
+          </p>
+        </div>
+      </div>
+    </section>
+    <center><h1>Some FAQs</h1></center><br>
+    <section class="section section-grid">
+      <div class="rellax" data-rellax-speed="1" data-rellax-xs-speed="3">
+        <i class="fas fa-video fa-3x secondary-text"></i>
+        <h2>How can I check my loan credibility?<span class="secondary-text dot">.</span></h2>
+        <p>
+          You can check your loan credibility by accessing our loan credibility predictor.Fill out the form below .
+        </p>
+      </div>
+      <div class="rellax" data-rellax-speed="4" data-rellax-xs-speed="3">
+        <i class="fas fa-users fa-3x secondary-text"></i>
+        <h2>Will I have to pay a fee to check my loan credibility?<span class="secondary-text dot">.</span></h2>
+        <p>
+          Our platform helps you check your credibility free of cost.
+        </p>
+      </div>
+      <div class="rellax" data-rellax-speed="7" data-rellax-xs-speed="3">
+        <i class="fas fa-book fa-3x secondary-text"></i>
+        <h2>What is a credit score?<span class="secondary-text dot">.</span></h2>
+        <p>
+          Your credit score is a reflection of your credit history. It takes into account all your past credit card bill payments and loan repayments. The score shows your promptness in repaying your loans and bills.
+        </p>
+      </div>
+    </section>
 
-<div class="container main">
-  <div class="jumbotron" id="holder">
-     <br>
-       <center><b></b></center>
-     <br>
-     <br>
-    <center><h1 class='main_heading'> Loan Approval Prediction</h1></center>
-	<p>Machine Learning Algorithm to predict whether a loan would be approved or not.</p>
-	<p>Note that this Model This Web Based Application is processed by a is 81.12% accurate</p>
-	<p><b>Please fill the form below</b></p>
+<div class="flex ">
+    <center><h1 class='main_heading'> Loan Credibility Predictor</h1></center>
     <br>
+	<center><p><b>Please fill the form below</b></p></center>
     <form class="form-horizontal" action="/predict"method="post">
 
       <div class="form-group">
@@ -124,11 +382,13 @@
 
     <br>
     <br>
-
+      <div class="output" >
         {{ prediction_text }}
-
+      </div>
   </div>
   </div>
-
+  <footer class="footer">
+   <center><p>@2021 Created by BE COMPS Group 2</p> </center>
+  </footer>
   </body>
 </html>
